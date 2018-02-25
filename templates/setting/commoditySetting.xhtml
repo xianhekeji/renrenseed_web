@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="{{url}}css/jquery.ui.autocomplete.css">
+    <script type="text/javascript" src="{{url}}js/jquery-1.4.2.js"></script>
+    <script type="text/javascript" src="{{url}}js/jquery.ui.core.js"></script>
+    <script type="text/javascript" src="{{url}}js/jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="{{url}}js/jquery.ui.position.js"></script>
+    <script type="text/javascript" src="{{url}}js/jquery.ui.autocomplete.js"></script>
+    <script charset="utf-8" src="{{url}}js/commoditysetting.js"></script>
+    <script charset="utf-8" src="{{url}}js/system.js"></script>
+    <head>
+        <title>商品维护</title>
+    </head>
+    <body>
+        <iframe name="myiframe" style="display:none;" onload="iframeLoad(this);"></iframe>
+        <form action="Class/CommoditySetting.class.php" method="post"
+              enctype='multipart/form-data'  target="myiframe">
+            <table>
+                <tr>
+                    <td>搜索名称</td>
+                    <td><input type="text" id="commodityname" name="commodityname" /></td>
+
+                </tr>
+                <tr>
+                    <td>商品分类</td>
+                    <td><input type="radio" name="class" value="种子" checked="true">种子 <input
+                            type="radio" name="class" value="农药">农药<input type="radio"
+                            name="class" value="化肥">化肥</td>
+                </tr>
+                <tr>
+                    <td>商品名称</td>
+                    <td><input type="heddin" name="name" value="" id="name" /></td>
+                    <td id="flag" name="flag"></td>
+                </tr>
+                <tr>
+                    <td>商品价格</td>
+                    <td><input type="heddin" name="price" id="price" value="0"
+                               onpropertychange='check(this.value)' oninput='check(this.value)' /></td>
+                </tr>
+                <tr>
+                    <td>品牌</td>
+                    <td><input type="text" name="brand" id="brand" /></td>
+                </tr>
+                <tr>
+                    <td>商品许可证</td>
+                    <td><input type="heddin" name="spec" id="spec" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>品种名称</td>
+                    <td><input type="text" id="cropname" name="cropname" /></td>
+                </tr>
+                <tr>
+                    <td width=100>品种</td>
+                    <td><select name="select_1" id="select_1" title="选择品种"
+                                style="width: 100px">
+                        </select></td>
+                    <td><select name="select_2" id="select_2" title="选择品种"
+                                style="width: 100px">
+                        </select></td>
+                </tr>
+
+                <tr>
+                    <td>商品描述</td>
+                    <td><textarea name="describe" rows="2" cols="20" id="describe"
+                                  style="height: 100px; width: 500px;"></textarea></td>
+                </tr>
+                <!-- 			<tr>
+                        <td>品牌</td>
+                        <td><input type="text" name="brand" id="brand" /></td>
+                </tr> -->
+                <tr>
+                    <td>所属企业</td>
+                    <td><input type="text" id="key" name="key" /></td>
+
+                </tr>
+                <tr name="commodityimg" id="commodityimg"></tr>
+
+                <tr>
+                    <td>图片</td>
+                <br />
+                <br />
+                <td><div id="picInput">
+                        上传图片：<input type="file" name='myfile[]'>
+                    </div> <br /> <br /> <input id="addBtn" type="button"
+                                                onclick="addPic1()" value="继续添加图片"><br /> <br /></td>
+                </tr>
+
+            </table>
+            <tr>
+
+            <input name="add" class="submit" type="submit" value="新建" />
+            <input name="modify" class="submit" type="submit" value="修改" />
+            <input id="reset" name="reset" class="submit" type="reset" value="重置" />
+            <input id="flag_zuofei" name="flag_zuofei" class="submit"
+                   type="submit" value="作废" />
+            <input id="flag_qiyong" name="flag_qiyong" class="submit"
+                   type="submit" value="启用" />
+        </tr>
+    </form>
+</body>
+</html>

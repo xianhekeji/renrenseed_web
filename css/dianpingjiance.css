@@ -1,0 +1,22 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2018-2-14, 17:18:52
+    Author     : whisper
+*/
+table {
+  border: 1;
+  border-collapse: collapse; }
+
+.t_comment {
+  width: 800px;
+  max-width: 800px;
+  line-height: 40px; }
+
+.t_name {
+  min-width: 80px; }
+
+/*# sourceMappingURL=dianpingjiance.css.map */

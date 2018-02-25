@@ -1,0 +1,30 @@
+<div id="LoginBox">
+    <div class="row1">
+        <a href="javascript:void(0)" title="关闭窗口" class="close_btn" id="closeBtn">×</a>
+    </div>
+    <!--        <div class="login_title"><text >扫描二维码登录</br>人人种品种大全</text></div>-->
+    <div id="login_container" class="login_container"></div>
+</div>
+<div class="top">
+    <div class="title left">
+        <span>
+            <a class="bold" href="{{url}}"><strong>主页</strong></a>
+            <a class="bold" href="{{url}}model/crop/CropMain.php"><strong>品种</strong></a>
+            <a class="bold" href="{{url}}model/article/index.php?"><strong>文章</strong></a>
+            <a class="bold" href="{{url}}model/enmain/enmain.php?"><strong>企商</strong></a>
+        </span>
+    </div>
+    <div class="title right">
+        <span>
+            {% if islogin %}
+            <a >{{localuser.UserName}}</a>&nbsp;
+            <a href="{{url}}comm/wxlogout.php" >退出</a>&nbsp;
+            {% else %}
+            <a  id="example" onclick="login()">登录</a>&nbsp;
+            {% endif %}
+
+            <!--                <a >{{province}}</a>&nbsp;-->
+            <!--            <input class="list" type="submit" value="更多产品" name="submit" />&nbsp;-->
+        </span>
+    </div>
+</div>

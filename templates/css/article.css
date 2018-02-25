@@ -1,0 +1,104 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2017-7-31, 11:00:41
+    Author     : whisper
+*/
+.left_div .search_div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  justify-content: center; }
+
+.left_div .search_div .search_input {
+  height: 60px;
+  width: 450px;
+  border: 1px solid #b61d1d; }
+
+.left_div .search_div .search_btn {
+  height: 60px;
+  width: 100px;
+  border: 1px solid #b61d1d;
+  background: null; }
+
+.ad_1 {
+  width: 300px;
+  height: 200px;
+  border: 1px solid #b61d1d; }
+
+.crop_content_class {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 80%;
+  margin-left: 10px;
+  min-height: 50px; }
+
+.crop_content_item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap; }
+
+.class_item {
+  min-width: 40px;
+  margin-left: 20px;
+  min-height: 40px;
+  line-height: 40px; }
+
+.article_list .item_article_list {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row; }
+
+.article_list .item_article_img {
+  width: 100px;
+  margin-left: 10px;
+  height: 100px; }
+
+.article_list .article_content {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column; }
+
+.article_list .article_content_text {
+  margin-top: 10px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  max-width: 700px; }
+
+.article_list .time {
+  margin-top: 20px; }
+
+.remen .item_article_list {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row; }
+
+.remen .item_article_img {
+  width: 70px;
+  height: 70px; }
+
+.remen .article_content {
+  max-width: 220px;
+  margin-left: 10px; }
+
+.article_title_div {
+  width: 100%;
+  text-align: center; }
+
+.article_title {
+  font-size: 25px; }
+
+.article_conent_content {
+  margin-left: 50px;
+  margin-right: 50px; }
+
+/*# sourceMappingURL=article.css.map */

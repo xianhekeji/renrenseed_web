@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="../../css/jquery.ui.autocomplete.css">
+    <script type="text/javascript" src="../../js/jquery-1.4.2.js"></script>
+    <script type="text/javascript" src="../../js/jquery.ui.core.js"></script>
+    <script type="text/javascript" src="../../js/jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="../../js/jquery.ui.position.js"></script>
+    <script type="text/javascript" src="../../js/jquery.ui.autocomplete.js"></script>
+    <script charset="utf-8" src="../../js/system.js"></script>
+    <script charset="utf-8" src="../../js/authorizesetting.js"></script>
+    <title>审定编号维护</title>
+    <body>
+        <iframe name="myiframe" style="display:none;" onload="iframeLoad(this);"></iframe>
+        <form action="Class/AuthorizeSetting.class.php" method="post"
+              enctype='multipart/form-data'  target="myiframe">
+            <table>
+                <tr>
+                    <td>审定编码</td>
+                    <td><input type="text" id="au_number" name="au_number" /><select name="select_status" id="select_status" title="选择品种">
+                            <option value="0" >无</option>
+                            <option value="1" >审定</option>
+                            <option value="2">引种</option>
+                            <option value="3" >登记</option>
+                        </select></td>
+                    <td id="flag"></td>
+                </tr>
+                <tr>
+                    <td>品种名称</td>
+                    <td><input type="text" id="cropname" name="cropname" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>审定年份</td>
+                    <td><input type="text" id="au_year" name="au_year" /></td>
+                </tr>
+                <tr>
+                    <td>审定省份</td>
+                    <td><input type="text" id="au_province_name" name="au_province_name" /></td>
+                </tr>
+                <tr>
+                    <td>培育单位</td>
+                    <td><input type="text" id="au_org" name="au_org" /></td>
+                </tr>
+                <tr>
+                    <td>审定单位</td>
+                    <td><input type="text" id="au_unit" name="au_unit" /></td>
+                </tr>
+
+                <tr>
+                    <td>品种来源</td>
+                    <td><textarea name="au_source" rows="2" cols="20" id="au_source"
+                                  style="height: 100px; width: 500px;"></textarea></td>
+                </tr>
+                <tr>
+                    <td>特征特性</td>
+                    <td><textarea name="au_featrue" rows="2" cols="20" id="au_featrue"
+                                  style="height: 100px; width: 500px;"></textarea></td>
+                </tr>
+                <tr>
+                    <td>抗性表现</td>
+                    <td><textarea name="au_kangxing" rows="2" cols="20" id="au_kangxing"
+                                  style="height: 100px; width: 500px;"></textarea></td>
+                </tr>
+                <tr>
+                    <td>品质表现</td>
+                    <td><textarea name="au_pinzhi" rows="2" cols="20" id="au_pinzhi"
+                                  style="height: 100px; width: 500px;"></textarea></td>
+                </tr>
+                <tr>
+                    <td>试验产量</td>
+                    <td><textarea name="au_pro" rows="2" cols="20" id="au_pro"
+                                  style="height: 100px; width: 500px;"></textarea></td>
+                </tr>
+                <tr>
+                    <td>栽培技术</td>
+                    <td><textarea name="au_skill" rows="2" cols="20" id="au_skill"
+                                  style="height: 100px; width: 500px;"></textarea></td>
+                </tr>
+                <tr>
+                    <td>适宜省份</td>
+                    <td><input type="text" id="au_province" name="au_province" /> <textarea
+                            style="width: 300px;" id="t_province"
+                            name="t_province" readonly="readonly"></textarea> <input
+                            type="button" id="reset_province" value="重置"
+                            onclick="resetProvince()" /></td>
+                </tr>
+                <tr>
+                    <td>适宜地区</td>
+                    <td><textarea name="au_region" rows="2" cols="20" id="au_region"
+                                  style="height: 100px; width: 500px;"></textarea></td>
+                </tr>
+                <tr>
+                    <td>退出理由</td>
+                    <td><textarea name="au_tuichu" rows="2" cols="20" id="au_tuichu"
+                                  style="height: 50px; width: 500px;"></textarea></td>
+                </tr>
+            </table>
+            <input name="add" class="submit" type="submit" value="新建" />
+            <input name="modify" class="submit" type="submit" value="修改" />
+            <input id="flag_zuofei" name="flag_zuofei" class="submit"
+                   type="submit" value="作废" />
+            <input id="flag_tuichu" name="flag_tuichu" class="submit"
+                   type="submit" value="退出" />
+            <input id="flag_qiyong" name="flag_qiyong" class="submit"
+                   type="submit" value="启用" />
+            <input id="reset" name="reset" class="submit" type="reset" value="重置" />
+        </form>
+    </body>
+</html>

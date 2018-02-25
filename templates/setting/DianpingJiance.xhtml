@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>点评审核</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="{{url}}css/dianpingjiance.css">
+            <script type="text/javascript" src="{{url}}js/jquery-1.4.2.js"></script>
+            <script type="text/javascript" src="{{url}}js/dianpingjiance.js" ></script>
+    </head>
+    <body>
+        <table  border="1">
+            {% for item in commen %}
+            <tr>
+                <td class="t_name"> {{item.UserName}}</td>
+                <td class="t_name">{{item.VarietyName}}</td>
+                <td class="t_comment"> <text >{{item.CommentComment}}</text></td>
+                <td>{{item.CommentRecordCreateTime}} </td>
+                {% if item.Status== '1' or item.Status=='2' %}
+                <td > <input id="huifu" name="{{item.UserId}}" class="submit" onclick="huifu('{{item.UserId}}')"
+                             type="button" value="恢复此用户禁言" /></td>
+                {% else %}
+                <td> <input id="jinyan" name="{{item.UserId}}" class="submit" onclick="jinyan('{{item.UserId}}')"
+                            type="button" value="禁言此用户" /></td>
+                {% endif %}
+                {% if item.CommentFlag== '2' %}
+                <td nowrap="nowrap"><input id="tongguo" name="{{item.CommentRecrodId}}" class="submit" onclick="setflag({{item.CommentRecrodId}}, 1)"
+                            type="button" value="通过" /><text >未通过</text></td>
+                {% elseif item.CommentFlag== '1' %}
+                <td nowrap="nowrap">
+                    <input id="weitongguo" name="{{item.CommentRecrodId}}" class="submit" onclick="setflag({{item.CommentRecrodId}}, 2)"
+                           type="button" value="未通过" /><text>已通过</text></td>
+                {% else %}
+                <td nowrap="nowrap">
+                    <input id="tongguo" name="{{item.CommentRecrodId}}" class="submit" onclick="setflag({{item.CommentRecrodId}}, 1)"
+                           type="button" value="通过" />
+                    <input id="weitongguo" name="{{item.CommentRecrodId}}" class="submit" onclick="setflag({{item.CommentRecrodId}}, 2)"
+                           type="button" value="未通过" /><text>未审核</text></td>
+                {% endif %}
+                <td > <input id="hongbao" name="{{item.UserGZHOpenId}}" class="submit" onclick="sendHongbao('{{item.UserGZHOpenId}}')"
+                             type="button" value="发送红包" /></td>
+                <td > </td>
+            </tr>
+            {% endfor %}
+        </table>
+        {{ include ('list/page_count.html')}}
+    </body>
+</html>

@@ -1,0 +1,51 @@
+{# /templates/index.html #}
+{% extends "base.xhtml" %}
+{% block title %}文章-品种-人人种品种大全{% endblock %}
+{% block meta %}
+<meta name="keywords" content="农作物品种文章,人人种品种大全"/>
+<meta name="description" content="人人种品种大全，关注农业互联网发展，了解品种审定/登记信息，提供大量品种种植高产经验,栽培技术,和更多的农业专家/农业爱好者的精品文章"/> 
+{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{{url}}css/article.css" />
+<link rel="stylesheet" href="{{url}}css/rate.css" type="text/css" />
+{% endblock %}
+{% block js %}
+<script type="text/javascript" src="{{url}}js/article.js" ></script>
+{% endblock %}
+{% block main %}
+<div class="left_div">
+    <div class="search">
+        <label for="search"></label>
+        <input class="input" type="text" name="search" id="search" value="{{key}}" /><input name="mainSearch" id="mainSearch" class="btn" type="button" value="搜索" />
+    </div>
+    <div class="crop_class" style="display: none;">
+        <div class="crop_content_class" >
+            <nobr><text class="changyong">常用标签</text></nobr>
+            <div class="crop_content_item">
+                {% for item in labeldata%}
+                <a class="class_item" title="{{item.LabelText}}"  onclick="resetClass({{item.LabelId}})" href="javascript:void(0)">{{item.LabelText}}</a>
+                {% endfor %}
+            </div></div>
+    </div>
+    <div class="article_list">
+        {{ include ('list/article_list_article.html')}} 
+        {{ include ('list/page_count.html')}}
+    </div>
+</div>
+<div class="right_div">
+
+    <div class="ad_1">
+        广告
+    </div>
+    <div class="right_menu">
+        <div class="right_menu_line"></div>
+        <text class="right_menu_text">热门阅读</text><div class="right_menu_line"></div></div>
+    <div class="remen">
+        {{ include ('list/article_list.html')}}
+
+    </div>
+    <div class="ad_1">
+        广告
+    </div>
+</div>
+{% endblock %}

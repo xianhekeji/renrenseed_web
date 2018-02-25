@@ -1,0 +1,42 @@
+ <div class="body_center">
+        <div>
+            <div class="pic">
+                <img class="logo" src="images/logo.png" />
+            </div>
+            <div class="search">
+                <form>
+                    <label for="search"></label>
+                    <input class="input" type="text" name="search" id="search" value="" /><input class="btn" type="submit" value="搜索" name="submit" />
+                </form>
+            </div>
+        </div>
+        <div class="s-menu-gurd">       
+            <ul class="s-ctner-menus">
+                <li id=s_menu_mine class="s-menu-item s-menu-mine" title="s_content_1">
+                    <div class="mine-icon"></div><div class="mine-text">我的关注</div></li>
+                <li class="s-menu-item" title="s_content_2"> <span>分类搜 </span> </li>
+                <li class="s-menu-item" title="s_content_3"><span> 推荐 </span>   </li>
+                <li class="s-menu-item" title="s_content_4"><span> 最新  </span>  </li>
+                <li class="s-menu-item" title="s_content_5"> <span>适宜本地 </span>   </li>
+                <li class="s-menu-item" title="s_content_6"> <span>文章  </span>  </li>
+            </ul></div>
+        <div  class="s-ctner-menus_1" >
+            <div  id="s_content_1">
+                {{ include ('list/search_list_crop.html')}}
+            </div>
+            <div  style="display:none" id="s_content_2">
+                {{ include ('index/condition_search.html')}}
+            </div>
+            <div  style="display:none" id="s_content_3">
+                {{ include ('list/tuijian_list_crop.html')}}
+            </div>
+            <div style="display:none" id="s_content_4">
+                {{ include ('list/zuixin_list_crop.html')}}
+            </div>
+            <div style="display:none" id="s_content_5">
+                {{ include ('list/shiyi_list_crop.html')}}
+            </div>
+            <div style="display:none" id="s_content_6">
+                <?php echo '文章' ?>
+            </div></div>
+    </div>

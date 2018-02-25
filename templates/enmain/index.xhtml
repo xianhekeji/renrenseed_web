@@ -1,0 +1,46 @@
+{# /templates/index.html #}
+{% extends "base.xhtml" %}
+{% block title %}企商-人人种品种大全{% endblock %}
+{% block meta %}
+<meta name="keywords" content="企商,农业科学研究院,农业经销商,农业生产企业,人人种品种大全"/>
+<meta name="description" content="人人种品种大全包含了全国大部分的农业部门企业、经销商、农业研究所/研究院/研究中心等的基本信息,并展现了各个部门的不同品牌信息，可以从这里查询到各大企商所经营/代理/培育/研发的不同品牌的不同品种" />  
+{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{{url}}css/enmain.css" />
+{% endblock %}
+{% block js %}
+<script type="text/javascript" src="{{url}}js/company.js"></script>
+{% endblock %}
+{% block main %}
+
+<div class="main_div">
+    <div class="condition_div">
+        <div class="province_div">
+            <nobr><text class="enmain_text">省份</text></nobr>
+            <div class="province_list">
+                {% for item in provincelist %}
+                <a title="{{item.areaname}}" class="province_a" href="javascript:void(0);"  onclick="setArea('{{item.areaid}}')">{{item.areaname}}</a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="brand_div">
+            <div class="province_div">
+                <nobr><text class="enmain_text" >品牌</text></nobr>
+                <div class="brand_content_div">
+                    <div class="py_list">
+                        {% for item in pylist %}
+                        <a title="{{item}}" class="py_a" name="py_a" id="py_a"  onclick="setbrandlist('{{item}}')" href="javascript:void(0);">{{item}}</a>
+                        {% endfor %}
+                    </div>
+                    <div class="brand_list" id="brand_list">
+                        {{include('enmain/brandlist.html')}}
+                    </div></div>
+            </div>
+        </div>
+    </div>
+    <div class="company_list">
+        {{ include ('list/company_list.html')}}
+        {{ include ('list/page_count.html')}}
+    </div>
+</div>
+{% endblock %}

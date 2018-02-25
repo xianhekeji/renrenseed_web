@@ -1,0 +1,181 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2017-7-26, 10:03:11
+    Author     : liguangming <JN XianHe>
+*/
+
+.crop_info{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+}
+.crop_info .crop_img{
+    width: 200px;
+    margin-left: 20px;
+    height: 200px;
+}
+.crop_info .crop_info_content{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.crop_info .crop_info_content .crop_info_text{
+    margin-top: 10px;
+}
+.crop_brand{
+    margin-top: 5px;
+}
+.crop_brand .crop_brand_content{
+    margin-top: 5px;
+}
+.crop_brand .crop_brand_content .item_brand_list{
+    height: 100px;
+    line-height: 100px;
+
+}
+.crop_brand .crop_brand_content .item_brand_list .brand_name{
+    margin-left: 20px;
+}
+.crop_brand .crop_brand_content .item_brand_list .brand_avatar{
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+}
+.crop_auth{
+    margin-top: 5px;
+}
+.crop_auth .crop_auth_content{
+    margin-top: 5px;
+}
+.crop_auth .crop_auth_content .item_auth_list{
+    height: 40px;
+    line-height: 40px;
+}
+
+.crop_auth .crop_auth_content .item_auth_list .auth_text{
+    margin-left: 20px;
+}
+.crop_auth .crop_auth_content .item_auth_list .text_arrow{
+    margin-left: 20px;
+    height: 40px;
+    line-height: 40px;
+}
+.crop_dianping{
+    margin-top: 5px;
+}
+.crop_dianping .crop_dianping_content{
+    margin-top: 5px;
+}
+.crop_dianping .crop_dianping_content .item_dianping_list{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.crop_dianping .crop_dianping_content .item_dianping_list .item_dianping_content{
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    line-height: 50px;
+}
+.crop_dianping .crop_dianping_content .item_dianping_list  .text{
+    margin-left: 20px;
+}
+
+.crop_dianping .crop_dianping_content .item_dianping_list  .dianping_text{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.crop_dianping .crop_dianping_content .item_dianping_list .sty_rate{
+    margin-top: 20px;
+}
+.crop_dianping .crop_dianping_content .useravatar{
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+}
+.pingfen{
+    width: 300px;
+    height: 200px;
+    border:1px solid #b61d1d;
+}
+.pingfen .pingfen_content{
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    align-content: center;
+}
+.pingfen .pingfen_content .pingfen_star{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pingfen .pingfen_content .pingfen_text{
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border:1px solid #b61d1d;
+    margin-top: 20px;
+    margin-left: 20px;
+    text-align: center;
+}
+.pingfen .dianping_btn{
+    margin-left: 20px;
+    margin-top: 20px;
+    border:0;
+    width:200px;
+    height:40px;
+    background:#36F;
+    font-size:15px;
+    color:#fff;
+}
+.tonglei{
+    margin-top: 20px;
+    width: 300px;
+    border:1px solid #b61d1d;
+}
+
+
+.item_crop_list {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+}
+
+.item_crop_list.content {
+    display: flex;
+    flex-direction: column; }
+
+.item_crop_img {
+    width: 70px;
+    height: 70px; }
+
+.crop_name {
+    margin-left: 10px;
+    color: #000000;
+    font-weight: bold; }
+
+.crop_name_content {
+    display: flex;
+    flex-direction: row; }
+.crop_content{
+    display: flex;
+    flex-direction: column;
+}
+.item_article_list{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.item_article_img{
+    width: 70px;
+    height: 70px;
+}
+.article_content{
+    max-width: 220px;
+    margin-left: 10px;
+}

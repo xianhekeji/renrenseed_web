@@ -1,0 +1,31 @@
+{# /templates/index.html #}
+{% extends "base.xhtml" %}
+{% block title %}人人种品种大全{% endblock %}
+{% block meta %}
+<meta name="description" content="人人种品种大全,www.renrenseed.com,renrenseed,品种查询,品种点评,查询,点评"  />   
+{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{{url}}css/cropsearch.css" type="text/css">
+    {% endblock %}
+    {% block js %}
+    <script type="text/javascript" src="{{url}}js/cropsearch.js" ></script>
+    {% endblock %}
+    {% block footer %}{% endblock %}
+    {% block main %}
+    <div class="search_left_div">
+        <div class="search_left">
+            <div class="search">
+                <label for="search"></label>
+                <input class="input" type="text" name="search" id="search" value="{{key}}" /><input name="mainSearch" id="mainSearch" class="btn" type="button" value="搜索" />
+            </div>
+            <div class="result"> 
+
+                {% if isExceed %}
+                {{ include ('comm/exceed_div.html')}}
+                {% else %}
+                {{ include ('list/search_result_list.html')}}
+                {% endif %}
+                {{ include ('list/page_count.html')}}
+            </div></div>
+    </div>
+    {% endblock %}

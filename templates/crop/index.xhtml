@@ -1,0 +1,116 @@
+{# /templates/index.html #}
+{% extends "base.xhtml" %}
+{% block title %}推荐-最新-热门-适宜-人人种品种大全{% endblock %}
+{% block meta %}
+<meta name="keywords" content="推荐品种、最新品种、热门品种、适宜本地种植"/>
+<meta name="description" content="人人种品种平台为广大农户提供推荐种植品种，最新国审省审品种以及种植地域大、农户偏矮的热门品种，更提供了适宜本地/本省/本区域适宜种植的农作物/非农作物品种" />  
+{% endblock %}
+{% block footer %}
+{% endblock %}
+{% block css %}
+<link href="../../css/cssreset.css" rel="stylesheet">
+    <link href="../../css/crop.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/list_crop.css" />
+        <link rel="stylesheet" href="../../css/rate.css" type="text/css" />
+        {% endblock %}
+        {% block js %}
+        <script type="text/javascript" src="{{url}}js/cropinfo.js"></script>
+        {% endblock %}
+        {% block main %}
+        <body style="background: #f6f6f6;">
+            <nav>
+                <div class="all">
+                    <a href="#">全部商品分类</a>
+                </div>
+                <ul>
+                    {% for item in crop_class %}
+                    {% if item.varietyclassid==1%}
+                    <li class="nav_item"><a  href="{{url}}model/crop/CropMain.php?classid={{item.varietyid}}">{{item.varietyname}}</a><span class="jt">&gt;</span>
+                        <div class="sub_menu">
+                            <div class="leftmenu">
+                                <dl>
+                                    <dt><a href="#"></a></dt>
+                                    <dd>
+                                        {% for item_item in crop_class %}
+                                        {% if item_item.varietyclassid==item.varietyid%}
+                                        <a title="{{item_item.varietyname}}" href="{{url}}model/crop/CropMain.php?class2id={{item_item.varietyid}}" >{{item_item.varietyname}}</a>
+                                        {% endif%}
+                                        {% endfor %}
+                                    </dd>
+                                </dl> 
+                            </div>
+                            <div class="rightmenu">
+                                <dl>
+                                    <dd>
+                                        <a href="http://sale.jd.com/act/1XDZ6ShE5M7tTrl.html">
+                                            <img src="http://img10.360buyimg.com/vclist/jfs/t1198/21/1061230330/3619/48ee51cc/556ed3a0N9004a8f7.jpg"
+                                                 width="168" height="134" title="by:罗坚元">
+                                        </a>
+                                    </dd>
+                                    <dd>
+                                        <a href="http://sale.jd.com/act/v8kJIaPmsMGuebpH.html">
+                                            <img src="http://img11.360buyimg.com/vclist/jfs/t1531/43/307393451/3092/229dc57a/557194e1N0d5188f3.jpg"
+                                                 width="168" height="134" title="by:罗坚元">
+                                        </a>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </li>
+                    {% endif%}
+                    {% endfor %}
+                </ul>
+            </nav>
+            <div class="middle_div">
+                <div class="classmenu">
+                    <dl>
+                        <dt><a title="热门品种"  href="{{url}}model/crop/CropMain.php?type=1">热门品种</a></dt>
+                        <dd>
+                            {% for item_item in crop_class_hot %}
+                            <a title="{{item_item.VarietyName}}"  href="{{url}}model/crop/cropinfo.php?cropid={{item_item.CropId}}" >{{item_item.VarietyName}}</a>
+                            {% endfor %}
+                        </dd>
+                    </dl> 
+                </div>
+                <div class="classmenu">
+                    <dl>
+                        <dt><a title="推荐品种"  href="{{url}}model/crop/CropMain.php?type=2">推荐品种</a></dt>
+                        <dd>
+                            {% for item_item in crop_class_tuijian %}
+                            <a title="{{item_item.VarietyName}}"  href="{{url}}model/crop/cropinfo.php?cropid={{item_item.CropId}}" >{{item_item.VarietyName}}</a>
+                            {% endfor %}
+                        </dd>
+                    </dl> 
+                </div>
+                <div class="classmenu">
+                    <dl>
+                        <dt><a  title="最新品种"  href="{{url}}model/crop/CropMain.php?type=3">最新品种</a></dt>
+                        <dd>
+                            {% for item_item in crop_class_zuixin %}
+                            <a  title="{{item_item.VarietyName}}"  href="{{url}}model/crop/cropinfo.php?cropid={{item_item.CropId}}" >{{item_item.VarietyName}}</a>
+                            {% endfor %}
+                        </dd>
+                    </dl> 
+                </div>
+                <div class="crop_list_div">
+                    <div class="comm_menu">
+                        <text class="comm_menu_text">农作物（{{allcount.count}}）</text>
+                        <a  title="更多农作物品种"  class="comm_menu_text" href="{{url}}model/crop/croplist.php?">查看更多</a>
+                    </div>
+                    {% if isExceed %}
+                    {{ include ('comm/exceed_div.html')}}
+                    {% else %}
+                    {{ include ('list/bendi_list_crop.html')}}
+                    {% endif %}
+                    {{ include ('list/page_count.html')}}
+                </div>
+            </div>
+            <div class="right_div">
+                <!--            <div class="right_ad"></div>-->
+                <div class="right_dianping">
+                    {{ include ('list/dianping_list_crop.html')}}
+                </div>
+            </div>
+
+        </body>
+        {% endblock %}

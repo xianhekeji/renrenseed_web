@@ -1,0 +1,73 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2017-7-26, 15:04:34
+    Author     : liguangming <JN XianHe>
+*/
+body {
+    text-align: center; }
+
+.main_div {
+    margin: 0 auto;
+    width: 1200px;
+    border: 1px solid #b61d1d;
+    min-height: 500px; }
+
+.condition_div {
+    text-align: left; }
+
+.condition_div .province_div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center; }
+
+.condition_div .province_div .province_list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 35px;
+    line-height: 35px; }
+
+.condition_div .province_div .province_a {
+    min-width: 100px; }
+
+.brand_div {
+    text-align: left;
+    margin-top: 110px; }
+
+.brand_content_div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px; }
+
+.py_a {
+    margin-right: 20px; }
+
+.company_list {
+    text-align: left; }
+
+.item_company_list {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-left: 10px; }
+
+.item_company_img {
+    width: 120px;
+    height: 120px; }
+
+.company_content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    height: 20px;
+    line-height: 20px; }
+
+.brand_list {
+    margin-top: 20px; }
+
+/*# sourceMappingURL=enmain.css.map */
